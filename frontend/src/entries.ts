@@ -33,7 +33,7 @@ const entry_meta_validator = record(
 const postingValidator = object({
   account: string,
   amount: string,
-  meta: entry_meta_validator,
+  meta: defaultValue(entry_meta_validator, {}),
 });
 
 interface Amount {
