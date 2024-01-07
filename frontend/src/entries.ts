@@ -12,18 +12,10 @@ import {
   union,
 } from "./lib/validation";
 
-export class Posting {
+export interface Posting {
   account: string;
-
   amount: string;
-
   meta: EntryMetadata;
-
-  constructor(account: string, amount: string, meta: EntryMetadata | null) {
-    this.account = account;
-    this.amount = amount;
-    this.meta = meta ?? {};
-  }
 }
 
 const entry_meta_validator = record(
