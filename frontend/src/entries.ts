@@ -7,6 +7,7 @@ import {
   number,
   object,
   optional_string,
+  optional_with_default,
   record,
   string,
   union,
@@ -25,7 +26,7 @@ const entry_meta_validator = record(
 const postingValidator = object({
   account: string,
   amount: string,
-  meta: defaultValue(entry_meta_validator, {}),
+  meta: optional_with_default(entry_meta_validator, {}),
 });
 
 interface Amount {
